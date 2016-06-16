@@ -7,7 +7,7 @@ class ShingledDocument(object):
         self.shingles = ngrams(document_text.split(), shingle_length)
         self.minhash = []
 
-        for hash_seed in generate_random_seeds(shingle_length, random_seed):
+        for hash_seed in generate_random_seeds(minhash_size, random_seed):
             hash_values = [mmh3.hash(shingle, hash_seed) for shingle in self.shingles]
             self.minhash.append(min(hash_values))
 
