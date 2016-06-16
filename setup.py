@@ -12,7 +12,7 @@ setup(
         description='k-shingles for text',
         long_description=readme,
         author='Steven Samson',
-        author_email='steven.a.samson@gmail.com'
+        author_email='steven.a.samson@gmail.com',
         url='https://github.com/steven-s/document-shingles',
         license=license,
         packages=find_packages(exclude=('tests'))
