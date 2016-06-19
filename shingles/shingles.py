@@ -9,6 +9,7 @@ class ShingledDocument:
             raise ValueError(u'input document is too short for specified shingle length of {}'.format(shingle_length))
 
         self.minhash = []
+        self.shingles = ngrams(split_text, shingle_length)
 
         for hash_seed in generate_random_seeds(minhash_size, random_seed):
             min_value = float('inf')
