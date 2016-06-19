@@ -8,16 +8,15 @@ class ShingledDocument:
         if len(split_text) < shingle_length:
             raise ValueError(u'input document is too short for specified shingle length of {}'.format(shingle_length))
 
-        self.shingles = ngrams(split_text, shingle_length)
         self.minhash = []
 
         for hash_seed in generate_random_seeds(minhash_size, random_seed):
-            min_value = float('-inf')
-            for shingle in self.shingles:
+            min_value = float('inf')
+            for shingle in ngrams(split_text, shingle_length):
                 value = mmh3.hash(' '.join(shingle), hash_seed)
                 min_value = min(min_value, value)
             self.minhash.append(min_value)
 
-    def similarity(other_shingled_doc):
-        return jaccard_similarity(set(self.minhash), set(other_shingled_doc.minhash))
-
+    def similarity(self, other_shingled_doc):
+        return jaccard_similarity(set(self.minhash), 
+                set(other_shingled_doc.minhash))
