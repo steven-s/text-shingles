@@ -37,3 +37,4 @@ class ShingledDocumentTestCase(unittest.TestCase):
         self.assertTrue(0.6 <= shingled_doc.similarity(
             rearranged_shingled_doc))
         self.assertTrue(0.5 > shingled_doc.similarity(shingled_diff_doc))
+

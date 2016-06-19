@@ -21,3 +21,4 @@ class ShingledDocument:
     def similarity(self, other_shingled_doc):
         return jaccard_similarity(set(self.minhash), 
                 set(other_shingled_doc.minhash))
+

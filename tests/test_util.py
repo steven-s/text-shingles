@@ -17,3 +17,4 @@ class UtilTestCase(unittest.TestCase):
         set_b = set([4, 5, 6, 7, 8, 9])
 
         self.assertEqual(3/9, jaccard_similarity(set_a, set_b))
+

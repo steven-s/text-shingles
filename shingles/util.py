@@ -6,3 +6,4 @@ def generate_random_seeds(n, seed=5):
 
 def jaccard_similarity(set_a, set_b):
     return len(set_a.intersection(set_b)) / len(set_a.union(set_b))
+
