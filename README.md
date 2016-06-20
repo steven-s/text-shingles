@@ -1,6 +1,6 @@
 # Text Shingles Library
 
-This is python 3 library to support measuring the similarity of text documents based on their [MinHash](https://en.wikipedia.org/wiki/MinHash) signature generated from their k-shingle form.
+This is python 3 library to support measuring the similarity of pieces of text based on their [MinHash](https://en.wikipedia.org/wiki/MinHash) signature generated from their k-shingle form.
 
 ## API
 
