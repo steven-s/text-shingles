@@ -8,4 +8,4 @@ clean:
 	rm -f `find shingles -name '*.pyc'`
 	rm -f `find shingles -name '*.pyo'`
 	rm -f `find . -name '*~'`
-	rm -rf build iso dist api document_shingles-$(VERSION) document_shingles.egg-info
+	rm -rf build iso dist api text_shingles-$(VERSION) text_shingles.egg-info

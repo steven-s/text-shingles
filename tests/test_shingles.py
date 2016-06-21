@@ -19,22 +19,23 @@ listen, while waiting till it would be time to leave. Her task was
 accomplished.
 """
 
-class ShingledDocumentTestCase(unittest.TestCase):
-    def test_shingling_short_document(self):
-        short_doc = u'hello there, im short'
+class ShingledTextTestCase(unittest.TestCase):
+
+    def test_shingling_short_text(self):
+        short_text = u'hello there, im short'
         with self.assertRaises(ValueError):
-            ShingledDocument(short_doc)
+            ShingledText(short_text)
 
     def test_shingling_paragraph(self):
-        shingled_document = ShingledDocument(paragraph, 5, 5, 20)
-        self.assertEqual(20, len(shingled_document.minhash))
+        shingled_text = ShingledText(paragraph, 5, 5, 20)
+        self.assertEqual(20, len(shingled_text.minhash))
 
     def test_similarity(self):
-        shingled_doc = ShingledDocument(paragraph, 5, 5, 20)
-        rearranged_shingled_doc = ShingledDocument(
+        shingled_text = ShingledText(paragraph, 5, 5, 20)
+        rearranged_shingled_text = ShingledText(
                 rearranged_paragraph, 5, 5, 20)
-        shingled_diff_doc = ShingledDocument(another_paragraph, 5, 5, 20)
-        self.assertTrue(0.6 <= shingled_doc.similarity(
-            rearranged_shingled_doc))
-        self.assertTrue(0.5 > shingled_doc.similarity(shingled_diff_doc))
+        shingled_diff_text = ShingledText(another_paragraph, 5, 5, 20)
+        self.assertTrue(0.6 <= shingled_text.similarity(
+            rearranged_shingled_text))
+        self.assertTrue(0.5 > shingled_text.similarity(shingled_diff_text))
 

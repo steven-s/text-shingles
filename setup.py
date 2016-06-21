@@ -7,13 +7,13 @@ with open('LICENSE') as f:
         license = f.read()
 
 setup(
-        name='document-shingles',
+        name='text-shingles',
         version='0.0.1',
         description='k-shingles for text',
         long_description=readme,
         author='Steven Samson',
         author_email='steven.a.samson@gmail.com',
-        url='https://github.com/steven-s/document-shingles',
+        url='https://github.com/steven-s/text-shingles',
         license=license,
         packages=find_packages(exclude=('tests'))
 )

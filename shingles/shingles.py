@@ -2,11 +2,11 @@ import mmh3
 from nltk import ngrams
 from shingles.util import generate_random_seeds, jaccard_similarity
 
-class ShingledDocument:
-    def __init__(self, document_text, random_seed=5, shingle_length=5, minhash_size=200):
-        split_text = document_text.split()
+class ShingledText:
+    def __init__(self, text, random_seed=5, shingle_length=5, minhash_size=200):
+        split_text = text.split()
         if len(split_text) < shingle_length:
-            raise ValueError(u'input document is too short for specified shingle length of {}'.format(shingle_length))
+            raise ValueError(u'input text is too short for specified shingle length of {}'.format(shingle_length))
 
         self.minhash = []
         self.shingles = ngrams(split_text, shingle_length)
@@ -18,7 +18,7 @@ class ShingledDocument:
                 min_value = min(min_value, value)
             self.minhash.append(min_value)
 
-    def similarity(self, other_shingled_doc):
+    def similarity(self, other_shingled_text):
         return jaccard_similarity(set(self.minhash), 
-                set(other_shingled_doc.minhash))
+                set(other_shingled_text.minhash))
 
