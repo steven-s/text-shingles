@@ -1,6 +1,8 @@
 import mmh3
 from nltk import ngrams
-from shingles.util import generate_random_seeds, jaccard_similarity
+
+from shingles.util import generate_random_seeds, minhash_similarity
+
 
 class ShingledText:
     def __init__(self, text, random_seed=5, shingle_length=5, minhash_size=200):
@@ -19,6 +21,4 @@ class ShingledText:
             self.minhash.append(min_value)
 
     def similarity(self, other_shingled_text):
-        return jaccard_similarity(set(self.minhash), 
-                set(other_shingled_text.minhash))
-
+        return minhash_similarity(self.minhash, other_shingled_text.minhash)

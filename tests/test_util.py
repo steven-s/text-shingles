@@ -12,9 +12,9 @@ class UtilTestCase(unittest.TestCase):
         self.assertEqual(seeds, same_seeds)
         self.assertNotEqual(seeds, diff_seeds)
 
-    def test_jaccard_similarity(self):
-        set_a = set([1, 2, 3, 4, 5, 6])
-        set_b = set([4, 5, 6, 7, 8, 9])
+    def test_minhash_similarity(self):
+        minhash_a = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        minhash_b = [1, 2, 3, 7, 8, 9, 10, 11, 12]
 
-        self.assertEqual(3/9, jaccard_similarity(set_a, set_b))
+        self.assertEqual(3/9, minhash_similarity(minhash_a, minhash_b))
 
