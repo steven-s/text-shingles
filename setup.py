@@ -7,7 +7,7 @@ with open('LICENSE') as f:
         license = f.read()
 
 setup(
-        name='text-shingles',
+        name='shingles',
         version='0.0.1',
         description='k-shingles for text',
         long_description=readme,
